@@ -42,7 +42,10 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
     private Head mHead;
     private Square mSquare;
     public static Egg mEgg;
-    private Web1 mWeb1;
+    private Web1 mWeb11;
+    private Web1 mWeb12;
+    private Web1 mWeb13;
+    private Web1 mWeb14;
     private Web2 mWeb2;
 
     private boolean eggEaten = false;
@@ -60,7 +63,13 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 
         mSquare = new Square();
         mEgg = new Egg();
-        mWeb1 = new Web1();
+        mWeb11 = new Web1();
+        Web1.initWeb1Coords = ShapeTools.scaleMatrix(Web1.web1Template, 1.0f);
+        mWeb12 = new Web1();
+        Web1.initWeb1Coords = ShapeTools.scaleMatrix(Web1.web1Template, 1.5f);
+        mWeb13 = new Web1();
+        Web1.initWeb1Coords = ShapeTools.scaleMatrix(Web1.web1Template, 2.0f);
+        mWeb14 = new Web1();
         mWeb2 = new Web2();
     }
 
@@ -89,7 +98,10 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 
         // Draw square background
         mSquare.draw(mMVPMatrix);
-        mWeb1.draw(mMVPMatrix);
+        mWeb11.draw(mMVPMatrix);
+        mWeb12.draw(mMVPMatrix);
+        mWeb13.draw(mMVPMatrix);
+        mWeb14.draw(mMVPMatrix);
         mWeb2.draw(mMVPMatrix);
         
         //Is snake in bounds?

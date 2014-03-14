@@ -61,17 +61,35 @@ public class Web1 {
 
     // number of coordinates per vertex in this array
     static final int COORDS_PER_VERTEX = 3;
-    private static final float web1Template[] = {
+    public static final float web1Template[] = {
         0.0f, 0.4f, 0.0f,
         0.3f, 0.3f, 0.0f,
         0.3f, 0.29f, 0.0f,
         -0.3f, 0.3f, 0.0f,
-        -0.3f, 0.29f, 0.0f};
+        -0.3f, 0.29f, 0.0f,
+        
+        0.0f, -0.4f, 0.0f,
+        0.3f, -0.3f, 0.0f,
+        0.3f, -0.29f, 0.0f,
+        -0.3f, -0.3f, 0.0f,
+        -0.3f, -0.29f, 0.0f,
+        
+        -0.4f, -0.0f, 0.0f,
+        -0.3f, 0.3f, 0.0f,
+        -0.3f, 0.29f, 0.0f,
+        -0.3f, -0.3f, 0.0f,
+        -0.3f, -0.29f, 0.0f,
+        
+        0.4f, -0.0f, 0.0f,
+        0.3f, 0.3f, 0.0f,
+        0.3f, 0.29f, 0.0f,
+        0.3f, -0.3f, 0.0f,
+        0.3f, -0.29f, 0.0f};
     
-    public static final float initWeb1Coords[] = ShapeTools.scaleMatrix(web1Template, 0.5f);
+    public static float initWeb1Coords[] = ShapeTools.scaleMatrix(web1Template, 0.5f);
     public static final int initWeb1Location[] = {0, 0};
     
-    private static final short drawOrder[] = { 0,1,2, 0,3,4}; // order to draw vertices
+    private static final short drawOrder[] = { 0,1,2, 0,3,4, 5,6,7, 5,8,9, 10,11,12, 10,13,14, 15,16,17, 15,18,19}; // order to draw vertices
 
     private final int vertexStride = COORDS_PER_VERTEX * 4; // 4 bytes per vertex
 
