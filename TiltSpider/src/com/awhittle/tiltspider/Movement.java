@@ -2,20 +2,20 @@ package com.awhittle.tiltspider;
 
 public class Movement {
 
-	private static int previousDir = 0;
+	//private static int previousDir = 0;
 	
 	public static void moveSnake(int dir) {
 		
 		float units = 0.1f;
 		
 		//Do not suddenly reverse direction, do a u-turn
-		if (dir == oppositeDir(previousDir)){
+		/*if (dir == oppositeDir(previousDir)){
 			if (dir != 4) {
 				dir += 1;
 			} else {
 				dir = 1;
 			}
-		}
+		}*/
 		
 		if (MainActivity.isPhone){
 			//Device is likely a phone with default portrait orientation
@@ -86,7 +86,7 @@ public class Movement {
 			}
 		}
 		
-		previousDir = dir;
+		//previousDir = dir;
 		
 	}
 
@@ -101,7 +101,7 @@ public class Movement {
 		Head.headLocation[1] += y;
 	}
 
-	private static int oppositeDir(int direction) {
+	/*private static int oppositeDir(int direction) {
 		switch(direction){
 		case 1:	direction = 3;
 			break;
@@ -114,5 +114,5 @@ public class Movement {
 		}
 		
 		return direction;
-	}
+	}*/
 }

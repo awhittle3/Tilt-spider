@@ -4,7 +4,7 @@
     <string name="app_name">Tilt Spider</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="instructions">Guide the snake by tilting! Get the eggs and avoid your tail!</string>
+    <string name="instructions">Guide the spider by tilting! Get the bugs! Stay on the web!</string>
     <string name="normal">Normal</string>
     <string name="hard">Hard</string>
     <string name="insane">Insane</string>
