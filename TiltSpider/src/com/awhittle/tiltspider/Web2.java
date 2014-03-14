@@ -29,7 +29,7 @@ import android.opengl.GLES20;
 /**
  * A two-dimensional square for use as a drawn object in OpenGL ES 2.0.
  */
-public class Web1 {
+public class Web2 {
 
     private final String vertexShaderCode =
             // This matrix member variable provides a hook to manipulate
@@ -56,22 +56,34 @@ public class Web1 {
     private int mPositionHandle;
     private int mColorHandle;
     private int mMVPMatrixHandle;
-    public static float[] web1Coords;
-    public static int[] web1Location = new int[2];
+    public static float[] web2Coords;
+    public static int[] web2Location = new int[2];
 
     // number of coordinates per vertex in this array
     static final int COORDS_PER_VERTEX = 3;
-    private static final float web1Template[] = {
-        0.0f, 0.4f, 0.0f,
-        0.3f, 0.3f, 0.0f,
-        0.3f, 0.29f, 0.0f,
-        -0.3f, 0.3f, 0.0f,
-        -0.3f, 0.29f, 0.0f};
+    private static final float web2Template[] = {
+        0.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f,
+        0.01f, 1.0f, 0.0f,
+        1.0f, 1.0f, 0.0f,
+        1.01f, 1.0f, 0.0f,
+        1.0f, 0.0f, 0.0f,
+        1.01f, 0.01f, 0.0f,
+        1.0f, -1.0f, 0.0f,
+        1.01f, -1.0f, 0.0f,
+        0.0f, -1.0f, 0.0f,
+        0.01f, -1.0f, 0.0f,
+        -1.0f, -1.0f, 0.0f,
+        -1.01f, -1.0f, 0.0f,
+        -1.0f, 0.0f, 0.0f,
+        -1.01f, 0.01f, 0.0f,
+        -1.0f, 1.0f, 0.0f,
+        -1.01f, 1.0f, 0.0f};
     
-    public static final float initWeb1Coords[] = ShapeTools.scaleMatrix(web1Template, 0.5f);
-    public static final int initWeb1Location[] = {0, 0};
+    public static final float initWeb2Coords[] = ShapeTools.scaleMatrix(web2Template, 1.0f);
+    public static final int initWeb2Location[] = {0, 0};
     
-    private static final short drawOrder[] = { 0,1,2, 0,3,4}; // order to draw vertices
+    private static final short drawOrder[] = { 0,1,2, 0,3,4, 0,5,6, 0,7,8, 0,9,10, 0,11,12, 0,13,14, 0,15,16}; // order to draw vertices
 
     private final int vertexStride = COORDS_PER_VERTEX * 4; // 4 bytes per vertex
 
@@ -80,16 +92,16 @@ public class Web1 {
     /**
      * Sets up the drawing object data for use in an OpenGL ES context.
      */
-    public Web1() {
-    	resetWeb1Location();
+    public Web2() {
+    	resetWeb2Location();
     	
         // initialize vertex byte buffer for shape coordinates
         ByteBuffer bb = ByteBuffer.allocateDirect(
         // (# of coordinate values * 4 bytes per float)
-                web1Coords.length * 4);
+                web2Coords.length * 4);
         bb.order(ByteOrder.nativeOrder());
         vertexBuffer = bb.asFloatBuffer();
-        vertexBuffer.put(web1Coords);
+        vertexBuffer.put(web2Coords);
         vertexBuffer.position(0);
 
         // initialize byte buffer for the draw list
@@ -160,8 +172,8 @@ public class Web1 {
         GLES20.glDisableVertexAttribArray(mPositionHandle);
     }
     
-	public static void resetWeb1Location() {
-		Web1.web1Coords = Web1.initWeb1Coords;
-		Web1.web1Location = Web1.initWeb1Location;
+	public static void resetWeb2Location() {
+		Web2.web2Coords = Web2.initWeb2Coords;
+		Web2.web2Location = Web2.initWeb2Location;
 	}
 }

@@ -42,6 +42,8 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
     private Head mHead;
     private Square mSquare;
     public static Egg mEgg;
+    private Web1 mWeb1;
+    private Web2 mWeb2;
 
     private boolean eggEaten = false;
 
@@ -58,6 +60,8 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 
         mSquare = new Square();
         mEgg = new Egg();
+        mWeb1 = new Web1();
+        mWeb2 = new Web2();
     }
 
     @Override
@@ -85,6 +89,8 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 
         // Draw square background
         mSquare.draw(mMVPMatrix);
+        mWeb1.draw(mMVPMatrix);
+        mWeb2.draw(mMVPMatrix);
         
         //Is snake in bounds?
         if (Head.headLocation[0] > 9 || Head.headLocation[0] < -9 ||
